@@ -12,15 +12,20 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({ 'rose-pine/neovim', as = 'rose-pine', config = function()
-	  vim.cmd('colorscheme rose-pine')
-  end
-  })
-  
+ -- use({ 'rose-pine/neovim', as = 'rose-pine', config = function()
+ --     vim.cmd('colorscheme rose-pine')
+ -- end})
+ -- 
+
+  --use({ 'RRethy/nvim-base16',  config = function()
+      --vim.cmd('colorscheme base16-monokai')
+  --end})
+
+  use 'tanvirtin/monokai.nvim'
+
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate'})
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
-  use('tpope/vim-fugitive')
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  branch = 'v2.x',
@@ -36,4 +41,9 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},     -- Required
 	  }
   }
+
+  --use("lukas-reineke/indent-blankline.nvim")
+  use("preservim/nerdcommenter")
 end)
+
+

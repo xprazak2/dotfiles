@@ -10,3 +10,18 @@ end)
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 lsp.setup()
+
+-- use tabs for autocompletion
+local cmp = require('cmp')
+
+cmp.setup({
+    --first item in menu is preselected
+    --ipreselect = 'item',
+    --completion = {
+        --completeopt = 'menu,menuone,noinsert'
+    --},
+    mapping = {
+        ['<Tab>'] = cmp.mapping.confirm({select = true})
+    }
+})
+
